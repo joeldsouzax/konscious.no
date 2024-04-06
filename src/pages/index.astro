@@ -1,34 +1,46 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Icon } from 'astro-icon';
 ---
 
 <Layout title="konscious.no">
-  <main
-    class="flex flex-col justify-center h-full items-center md:gap-4 gap-20 mx-auto"
+  <swiper-container
+    class="mySwiper"
+    direction="vertical"
+    space-between="0"
+    mousewheel="true"
+    autoplay-delay="4000000"
+    autoplay-disable-on-interaction="false"
   >
-    <div class="flex flex-col justify-center items-center gap-12 md:gap-0">
-      <h1
-        class="lg:text-7xl text-4xl cursor-pointer transition-all ease-in duration-300 text-landingColor"
-      >
-        COMING SOON
-      </h1>
-      <img
-        src="/konscious.no.svg"
-        alt="follow"
-        class="lg:w-80 w-72 rotate-[40deg] md:rotate-0 pr-0 md:pr-24 self-start transition-all ease-in-out duration-300"
-      />
-    </div>
-    <a
-      href="https://www.instagram.com/konscious.no/"
-      class="flex flex-row gap-1 items-center rounded-full border-solid border-2 bg-white px-2 bg-opacity-50 border-opacity-50 hover:shadow-lg lg:shadow-sm shadow-lg cursor-pointer transition-all ease-in duration-300"
-    >
-      <Icon name="prime:instagram" class="w-6 text-landingColor" />
-      <h5 class="lg:text-xl
-        text-md
-        text-landingColor">
-        konscious.no
-      </h5>
-    </a>
-  </main>
+    <swiper-slide>
+      <img src="/imp/2.png" alt="Random image" />
+      <div class="absolute inset-0 flex flex-col mt-24"
+        ><h2 class="text-black md:text-3xl text-2xl font-bold mb-24"
+          >COMING SOON</h2
+        >
+        <h2 class="text-black md:text-9xl text-6xl">Sustainable</h2>
+        <h2 class="text-black md:text-9xl text-6xl italic">Luxury</h2>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide class="bg-gray-300">
+      <div class="relative lg:max-w-8xl max-w-full mx-2 lg:mx-0 mx-auto mt-20">
+        <img
+          class="lg:h-[600px] h-96 w-full object-cover rounded-2xl"
+          src="/imp/3.png"
+          alt="Random image"
+        />
+        <div class="absolute inset-0 flex flex-col gap-2 justify-center">
+          <h2 class="text-white md:text-6xl text-3xl">inspired by nature.</h2>
+          <a
+            href="mailto:contact@konscious.no"
+            class="text-white md:text-1xl text-xl underline"
+            >contact@konscious.no</a
+          >
+        </div>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+  <script
+    src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"
+    is:inline></script>
 </Layout>
